@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-display: var(--font-fredoka);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-slate-950 text-slate-100;
+  background-image:
+    radial-gradient(60rem 40rem at 10% -10%, rgb(79 70 229 / 0.35), transparent),
+    radial-gradient(50rem 30rem at 110% 10%, rgb(236 72 153 / 0.18), transparent);
+  background-attachment: fixed;
 }
+
+@utility card {
+  @apply rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur;
+}
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 font-semibold transition
+    disabled:cursor-not-allowed disabled:opacity-50 active:translate-y-px;
+}
+@utility btn-primary {
+  @apply btn bg-indigo-500 text-white shadow-[0_4px_0_0_rgb(55_48_163)] hover:bg-indigo-400;
+}
+@utility btn-secondary {
+  @apply btn bg-white/10 text-slate-100 hover:bg-white/20;
+}
+@utility btn-danger {
+  @apply btn bg-rose-600/80 text-white hover:bg-rose-500;
+}
+@utility input {
+  @apply w-full rounded-xl border border-white/15 bg-slate-900/70 px-3 py-2 text-slate-100
+    placeholder:text-slate-500 focus:border-indigo-400 focus:outline-none;
+}
+@utility label {
+  @apply mb-1 block text-sm font-medium text-slate-300;
+}
+@utility heading {
+  @apply font-[family-name:var(--font-display)] font-semibold tracking-tight;
+}
+@utility badge {
+  @apply inline-flex items-center rounded-full bg-white/10 px-2.5 py-0.5 text-xs font-medium text-slate-300;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.6); opacity: 0; }
+  70% { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); }
+}
+.animate-pop { animation: pop 0.35s ease-out both; }

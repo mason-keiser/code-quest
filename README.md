@@ -7,6 +7,53 @@
 
 > Tip for reviewers: sign in as **demo_teacher** and open **Recent games → Report** to see a seeded class report. Then host *Python Basics Warm-Up* in one window and join it as **demo_student** in a private window.
 
+![CodeQuest landing page](docs/screenshots/landing.png)
+
+---
+
+## Screenshots
+
+### 🎮 Live quiz
+The host screen goes on the classroom projector while students answer on their own devices. Both views stay in sync in real time.
+
+<table>
+  <tr>
+    <th width="70%">Host (projector)</th>
+    <th width="30%">Student (phone)</th>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/host-question.png" alt="Host view of a live code question with countdown timer"></td>
+    <td><img src="docs/screenshots/player-question.png" alt="Student phone view with answer buttons and power-ups"></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/host-reveal.png" alt="Answer reveal with the class's answer distribution and live leaderboard"></td>
+    <td><img src="docs/screenshots/player-reveal.png" alt="Student sees they were correct, their points and their place"></td>
+  </tr>
+</table>
+
+<details>
+<summary>Lobby and final podium</summary>
+
+![Game lobby with PIN and joined players](docs/screenshots/host-lobby.png)
+![Final results podium](docs/screenshots/podium.png)
+
+</details>
+
+### 🛠️ Quiz maker
+Instructors build quizzes with multiple-choice, true/false, and "what does this code print?" questions. The editor has a live syntax-highlighted preview, per-question timers and point values, and an AI draft panel.
+
+![Quiz editor](docs/screenshots/quiz-editor.png)
+
+### 🏆 Leaderboard
+Points from every game are saved to each student's account and add up over time.
+
+![Leaderboard](docs/screenshots/leaderboard.png)
+
+### 📊 Class report
+After each game, instructors see class accuracy, the questions most worth reteaching, and a per-question breakdown.
+
+![Post-game class report](docs/screenshots/report.png)
+
 ---
 
 ## Features

@@ -30,10 +30,13 @@ export function handle<A extends unknown[]>(fn: (...args: A) => Promise<Response
 
 type DbResult<T> = { data: T; error: { message: string } | null };
 
-/** Unwraps a Supabase result, throwing a 500 if the call failed or returned nothing. */
+/**
+ * Unwraps a Supabase result, throwing a 500 if the call failed. Lists and
+ * .single() always return data on success; writes without .select() return
+ * null, which callers simply ignore.
+ */
 export function check<T>(result: DbResult<T>): NonNullable<T> {
   if (result.error) throw new HttpError(500, result.error.message);
-  if (result.data == null) throw new HttpError(500, "Unexpected empty result");
   return result.data as NonNullable<T>;
 }
 
